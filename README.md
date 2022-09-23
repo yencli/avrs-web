@@ -150,7 +150,7 @@ or you may try with your own data by configurating config.ini then run with:
 
 The documentation is distributed with avrs-web source code in the docs/ directory.
 
-_For more examples, please refer to the [Documentation](https://github.com/yencli/avrs-web/docs/)_
+_For more examples, please refer to the [Documentation](https://yencli.github.io/avrs-web/)_
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
