@@ -9,7 +9,7 @@ AVRS Associated Videos Recommendation System
 <br />
 <div align="center">
   <a href="https://github.com/yencli/avrs-web">
-    <img src="doc/img/homepage.png" alt="Logo" width="400" height="100">
+    <img src="docs/img/homepage.png" alt="Logo" width="400" height="100">
   </a>
 
   <h3 align="center">AVRS-web</h3>
@@ -17,7 +17,7 @@ AVRS Associated Videos Recommendation System
   <p align="center">
     An awesome Associated Videos Recommendation System!
     <br />
-    <a href="https://github.com/yencli/avrs-web/tree/main/doc"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/yencli/avrs-web/tree/main/docs"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     <a href="https://drive.google.com/file/d/1uOcU_qirs1BXfuds_xunhpAI7gT6xTFt/view?usp=sharing">View Demo</a>
@@ -60,7 +60,7 @@ AVRS Associated Videos Recommendation System
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot](doc/img/get_recommendations.png)](https://github.com/yencli/avrs-web)
+[![Product Name Screen Shot](docs/img/get_recommendations.png)](https://github.com/yencli/avrs-web)
 
 This App provides associated videos based on your selection as well as an interactive chart to visualize how videos are distributed by their topics.
 
@@ -148,9 +148,9 @@ or you may try with your own data by configurating config.ini then run with:
   ```
 
 
-The documentation is distributed with avrs-web source code in the doc/ directory.
+The documentation is distributed with avrs-web source code in the docs/ directory.
 
-_For more examples, please refer to the [Documentation](https://github.com/yencli/avrs-web/doc/)_
+_For more examples, please refer to the [Documentation](https://github.com/yencli/avrs-web/docs/)_
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
