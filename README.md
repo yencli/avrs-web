@@ -17,7 +17,7 @@ AVRS Associated Videos Recommendation System
   <p align="center">
     An awesome Associated Videos Recommendation System!
     <br />
-    <a href="https://github.com/yencli/avrs-web/tree/main/docs"><strong>Explore the docs »</strong></a>
+    <a href="https://yencli.github.io/avrs-web"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     <a href="https://drive.google.com/file/d/1uOcU_qirs1BXfuds_xunhpAI7gT6xTFt/view?usp=sharing">View Demo</a>
@@ -160,7 +160,7 @@ _For more examples, please refer to the [Documentation](https://yencli.github.io
 ## Roadmap
 
 - [ ] Add pytest
-- [x] Add Complete documentation
+- [x] Add Documentation
 - [ ] Add User-based data to content
 
 See the [open issues](https://github.com/yencli/avrs-web/issues) for a full list of proposed features (and known issues).
