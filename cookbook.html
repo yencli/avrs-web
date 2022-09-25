@@ -7,19 +7,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>Cookbook &#8212; AVRS 0.1.0 documentation</title>
-    <link rel="stylesheet" type="text/css" href="static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="static/alabaster.css" />
-    <script data-url_root="./" id="documentation_options" src="static/documentation_options.js"></script>
-    <script src="static/jquery.js"></script>
-    <script src="static/underscore.js"></script>
-    <script src="static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="static/doctools.js"></script>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Support" href="support.html" />
     <link rel="prev" title="AVRS Python API" href="api.html" />
    
-  <link rel="stylesheet" href="static/custom.css" type="text/css" />
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
   
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
@@ -48,10 +49,10 @@ AVRS can do for you.</p>
 your data by completing the section [DB Paths] under config.ini</p>
 <p>Please specify the location of embedding data and clustering data if they are
 in diffrent folder.</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="lineno">1 </span> <span class="p p-Indicator">[</span><span class="nv">DB Paths</span><span class="p p-Indicator">]</span>
-<span class="lineno">2 </span> <span class="nt">DATA_DIR</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">Path to data file</span><span class="p p-Indicator">]</span>
-<span class="lineno">3 </span> <span class="nt">EMBED_FOLDER</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">Embedding data folder</span><span class="p p-Indicator">]</span>
-<span class="lineno">4 </span> <span class="nt">RESULT_FOLDER</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">Clustering data folder</span><span class="p p-Indicator">]</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">DB Paths</span><span class="p p-Indicator">]</span><span class="w"></span>
+<span class="linenos">2</span><span class="w"> </span><span class="nt">DATA_DIR</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">Path to data file</span><span class="p p-Indicator">]</span><span class="w"></span>
+<span class="linenos">3</span><span class="w"> </span><span class="nt">EMBED_FOLDER</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">Embedding data folder</span><span class="p p-Indicator">]</span><span class="w"></span>
+<span class="linenos">4</span><span class="w"> </span><span class="nt">RESULT_FOLDER</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">Clustering data folder</span><span class="p p-Indicator">]</span><span class="w"></span>
 </pre></div>
 </div>
 <p>The embedding data should be a JSON format file containing the following keys:
@@ -60,12 +61,12 @@ in diffrent folder.</p>
 * tags
 * embeddings
 It should look like this:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="lineno">1 </span> <span class="p">{</span>
-<span class="lineno">2 </span>     <span class="s2">&quot;videoId&quot;</span><span class="o">:</span> <span class="p">{</span><span class="s2">&quot;0&quot;</span><span class="o">:</span><span class="s2">&quot;987654321&quot;</span><span class="p">,</span><span class="s2">&quot;1&quot;</span><span class="o">:</span><span class="s2">&quot;876543219&quot;</span><span class="p">},</span>
-<span class="lineno">3 </span>     <span class="s2">&quot;title&quot;</span><span class="o">:</span> <span class="p">{</span><span class="s2">&quot;0&quot;</span><span class="o">:</span><span class="s2">&quot;title1&quot;</span><span class="p">,</span><span class="s2">&quot;1&quot;</span><span class="o">:</span><span class="s2">&quot;title2&quot;</span><span class="p">},</span>
-<span class="lineno">4 </span>     <span class="s2">&quot;tags&quot;</span><span class="o">:</span> <span class="p">{</span><span class="s2">&quot;0&quot;</span><span class="o">:</span><span class="s2">&quot;[]&quot;</span><span class="p">,</span><span class="s2">&quot;1&quot;</span><span class="o">:</span><span class="s2">&quot;[&quot;</span><span class="nx">tag1</span><span class="s2">&quot;,&quot;</span><span class="nx">tag2</span><span class="s2">&quot;]&quot;</span><span class="p">},</span>
-<span class="lineno">5 </span>     <span class="s2">&quot;embeddings&quot;</span><span class="o">:</span> <span class="p">{</span><span class="s2">&quot;0&quot;</span><span class="o">:</span><span class="p">[...],</span><span class="s2">&quot;1&quot;</span><span class="o">:</span><span class="p">[...]},</span>
-<span class="lineno">6 </span> <span class="p">}</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="linenos">2</span><span class="w">     </span><span class="s2">&quot;videoId&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="s2">&quot;0&quot;</span><span class="o">:</span><span class="s2">&quot;987654321&quot;</span><span class="p">,</span><span class="s2">&quot;1&quot;</span><span class="o">:</span><span class="s2">&quot;876543219&quot;</span><span class="p">},</span><span class="w"></span>
+<span class="linenos">3</span><span class="w">     </span><span class="s2">&quot;title&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="s2">&quot;0&quot;</span><span class="o">:</span><span class="s2">&quot;title1&quot;</span><span class="p">,</span><span class="s2">&quot;1&quot;</span><span class="o">:</span><span class="s2">&quot;title2&quot;</span><span class="p">},</span><span class="w"></span>
+<span class="linenos">4</span><span class="w">     </span><span class="s2">&quot;tags&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="s2">&quot;0&quot;</span><span class="o">:</span><span class="s2">&quot;[]&quot;</span><span class="p">,</span><span class="s2">&quot;1&quot;</span><span class="o">:</span><span class="s2">&quot;[&quot;</span><span class="nx">tag1</span><span class="s2">&quot;,&quot;</span><span class="nx">tag2</span><span class="s2">&quot;]&quot;</span><span class="p">},</span><span class="w"></span>
+<span class="linenos">5</span><span class="w">     </span><span class="s2">&quot;embeddings&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="s2">&quot;0&quot;</span><span class="o">:</span><span class="p">[...],</span><span class="s2">&quot;1&quot;</span><span class="o">:</span><span class="p">[...]},</span><span class="w"></span>
+<span class="linenos">6</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>However, the script that transform the existing video data to embedding data is not
@@ -108,17 +109,17 @@ It shoud look like this:</p>
 </pre></div>
 </div>
 <p>This will return associated video IDs in JSON format like this:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="lineno">1 </span> <span class="p">{</span>
-<span class="lineno">2 </span>     <span class="s2">&quot;0&quot;</span><span class="o">:</span> <span class="s2">&quot;751352883781304320&quot;</span><span class="p">,</span>
-<span class="lineno">3 </span>     <span class="s2">&quot;1&quot;</span><span class="o">:</span> <span class="s2">&quot;672020501882732544&quot;</span>
-<span class="lineno">4 </span> <span class="p">}</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="linenos">2</span><span class="w">     </span><span class="s2">&quot;0&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;751352883781304320&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="linenos">3</span><span class="w">     </span><span class="s2">&quot;1&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;672020501882732544&quot;</span><span class="w"></span>
+<span class="linenos">4</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>The maximun number of associated videos(there will be less if there are not
 enough associated videos) to display can be define in congif.ini by changing
 “n_reco” (default = 4). However, you may also change this setting simply by
 making a POST request instead of GET and include this JSON in the body:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="lineno">1 </span> <span class="p">{</span> <span class="s2">&quot;n_reco&quot;</span><span class="o">:</span> <span class="mi">6</span> <span class="p">}</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">&quot;n_reco&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">6</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 </section>
@@ -136,17 +137,17 @@ making a POST request instead of GET and include this JSON in the body:</p>
 <dd></dd></dl>
 
 <p>The data should look like the following example that contains the fields below:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="lineno"> 1 </span> <span class="p">{</span>
-<span class="lineno"> 2 </span>     <span class="s2">&quot;videoId&quot;</span><span class="o">:</span> <span class="s2">&quot;1020337500092104704&quot;</span><span class="p">,</span>
-<span class="lineno"> 3 </span>     <span class="s2">&quot;title&quot;</span><span class="o">:</span> <span class="s2">&quot;10193779&quot;</span><span class="p">,</span>
-<span class="lineno"> 4 </span>     <span class="s2">&quot;hubId&quot;</span><span class="o">:</span> <span class="s2">&quot;922392682985160704&quot;</span><span class="p">,</span>
-<span class="lineno"> 5 </span>     <span class="s2">&quot;description&quot;</span><span class="o">:</span> <span class="s2">&quot;FEL&quot;</span><span class="p">,</span>
-<span class="lineno"> 6 </span>     <span class="s2">&quot;text&quot;</span><span class="o">:</span><span class="s2">&quot;un, deux trois Je vais dans les bois quatre cinq six Je sors ma scie&quot;</span><span class="p">,</span>
-<span class="lineno"> 7 </span>     <span class="s2">&quot;tags&quot;</span><span class="o">:</span> <span class="p">[</span>
-<span class="lineno"> 8 </span>                 <span class="s2">&quot;990875315418955776:2&quot;</span><span class="p">,</span>
-<span class="lineno"> 9 </span>                 <span class="s2">&quot;- &gt;2h Cause connue, délai maîtrisé&quot;</span>
-<span class="lineno">10 </span>             <span class="p">]</span>
-<span class="lineno">11 </span> <span class="p">}</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="linenos"> 2</span><span class="w">     </span><span class="s2">&quot;videoId&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;1020337500092104704&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="linenos"> 3</span><span class="w">     </span><span class="s2">&quot;title&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;10193779&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="linenos"> 4</span><span class="w">     </span><span class="s2">&quot;hubId&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;922392682985160704&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="linenos"> 5</span><span class="w">     </span><span class="s2">&quot;description&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;FEL&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="linenos"> 6</span><span class="w">     </span><span class="s2">&quot;text&quot;</span><span class="o">:</span><span class="s2">&quot;un, deux trois Je vais dans les bois quatre cinq six Je sors ma scie&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="linenos"> 7</span><span class="w">     </span><span class="s2">&quot;tags&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="linenos"> 8</span><span class="w">                 </span><span class="s2">&quot;990875315418955776:2&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="linenos"> 9</span><span class="w">                 </span><span class="s2">&quot;- &gt;2h Cause connue, délai maîtrisé&quot;</span><span class="w"></span>
+<span class="linenos">10</span><span class="w">             </span><span class="p">]</span><span class="w"></span>
+<span class="linenos">11</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Only the “description”, “text”(the transcription obtained from video) and “tags”
@@ -199,11 +200,11 @@ there be to be considered as a group insdead of outliner.
 See <a class="reference external" href="https://hdbscan.readthedocs.io/en/latest/parameter_selection.html#selecting-min-cluster-size">HDBSCAN</a>
 for furthur details.</p>
 <p>Therefore the JSON to put in the body of request should look like:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="lineno">1 </span> <span class="p">{</span>
-<span class="lineno">2 </span>     <span class="s2">&quot;n_neighbors&quot;</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
-<span class="lineno">3 </span>     <span class="s2">&quot;n_components&quot;</span><span class="o">:</span> <span class="mi">20</span><span class="p">,</span>
-<span class="lineno">4 </span>     <span class="s2">&quot;min_cluster_size&quot;</span><span class="o">:</span> <span class="mi">3</span>
-<span class="lineno">5 </span> <span class="p">}</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="linenos">2</span><span class="w">     </span><span class="s2">&quot;n_neighbors&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">5</span><span class="p">,</span><span class="w"></span>
+<span class="linenos">3</span><span class="w">     </span><span class="s2">&quot;n_components&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">20</span><span class="p">,</span><span class="w"></span>
+<span class="linenos">4</span><span class="w">     </span><span class="s2">&quot;min_cluster_size&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">3</span><span class="w"></span>
+<span class="linenos">5</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>This request will update the model and save the new model to [client ID]_result.json</p>
@@ -222,37 +223,37 @@ in the AVRS-web app can be retrieve via this GET request:
 </pre></div>
 </div>
 <p>This will return a JSON file like this:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="lineno"> 1 </span> <span class="p">{</span>
-<span class="lineno"> 2 </span>     <span class="s2">&quot;schema&quot;</span><span class="o">:</span>
-<span class="lineno"> 3 </span>     <span class="p">{</span>
-<span class="lineno"> 4 </span>         <span class="s2">&quot;fields&quot;</span><span class="o">:</span>
-<span class="lineno"> 5 </span>             <span class="p">[</span>
-<span class="lineno"> 6 </span>                 <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="o">:</span><span class="s2">&quot;index&quot;</span><span class="p">,</span><span class="s2">&quot;type&quot;</span><span class="o">:</span><span class="s2">&quot;integer&quot;</span><span class="p">},</span>
-<span class="lineno"> 7 </span>                 <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="o">:</span><span class="s2">&quot;videoId&quot;</span><span class="p">,</span><span class="s2">&quot;type&quot;</span><span class="o">:</span><span class="s2">&quot;any&quot;</span><span class="p">,</span><span class="s2">&quot;extDtype&quot;</span><span class="o">:</span><span class="s2">&quot;string&quot;</span><span class="p">},</span>
-<span class="lineno"> 8 </span>                 <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="o">:</span><span class="s2">&quot;title&quot;</span><span class="p">,</span><span class="s2">&quot;type&quot;</span><span class="o">:</span><span class="s2">&quot;string&quot;</span><span class="p">},</span>
-<span class="lineno"> 9 </span>                 <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="o">:</span><span class="s2">&quot;x&quot;</span><span class="p">,</span><span class="s2">&quot;type&quot;</span><span class="o">:</span><span class="s2">&quot;number&quot;</span><span class="p">},</span>
-<span class="lineno">10 </span>                 <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="o">:</span><span class="s2">&quot;y&quot;</span><span class="p">,</span><span class="s2">&quot;type&quot;</span><span class="o">:</span><span class="s2">&quot;number&quot;</span><span class="p">},</span>
-<span class="lineno">11 </span>                 <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="o">:</span><span class="s2">&quot;label&quot;</span><span class="p">,</span><span class="s2">&quot;type&quot;</span><span class="o">:</span><span class="s2">&quot;integer&quot;</span><span class="p">}</span>
-<span class="lineno">12 </span>             <span class="p">],</span>
-<span class="lineno">13 </span>         <span class="s2">&quot;primaryKey&quot;</span><span class="o">:</span><span class="p">[</span><span class="s2">&quot;index&quot;</span><span class="p">],</span>
-<span class="lineno">14 </span>         <span class="s2">&quot;pandas_version&quot;</span><span class="o">:</span><span class="s2">&quot;x.y.z&quot;</span><span class="p">},</span>
-<span class="lineno">15 </span>         <span class="s2">&quot;data&quot;</span><span class="o">:</span><span class="p">[</span>
-<span class="lineno">16 </span>                 <span class="p">{</span>
-<span class="lineno">17 </span>                     <span class="s2">&quot;index&quot;</span><span class="o">:</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;videoId&quot;</span><span class="o">:</span><span class="s2">&quot;751352883781304320&quot;</span><span class="p">,</span>
-<span class="lineno">18 </span>                     <span class="s2">&quot;title&quot;</span><span class="o">:</span><span class="s2">&quot;test dnd&quot;</span><span class="p">,</span>
-<span class="lineno">19 </span>                     <span class="s2">&quot;x&quot;</span><span class="o">:-</span><span class="mf">5.9736323357</span><span class="p">,</span>
-<span class="lineno">20 </span>                     <span class="s2">&quot;y&quot;</span><span class="o">:-</span><span class="mf">4.7278847694</span><span class="p">,</span>
-<span class="lineno">21 </span>                     <span class="s2">&quot;label&quot;</span><span class="o">:-</span><span class="mi">1</span>
-<span class="lineno">22 </span>                 <span class="p">},</span>
-<span class="lineno">23 </span>                 <span class="p">{</span>
-<span class="lineno">24 </span>                     <span class="s2">&quot;index&quot;</span><span class="o">:</span><span class="mi">1</span><span class="p">,</span>
-<span class="lineno">25 </span>                     <span class="s2">&quot;videoId&quot;</span><span class="o">:</span><span class="s2">&quot;751345947757248512&quot;</span><span class="p">,</span>
-<span class="lineno">26 </span>                     <span class="s2">&quot;title&quot;</span><span class="o">:</span><span class="s2">&quot;test upload&quot;</span><span class="p">,</span>
-<span class="lineno">27 </span>                     <span class="s2">&quot;x&quot;</span><span class="o">:-</span><span class="mf">5.4844770432</span><span class="p">,</span>
-<span class="lineno">28 </span>                     <span class="s2">&quot;y&quot;</span><span class="o">:-</span><span class="mf">4.1368937492</span><span class="p">,</span>
-<span class="lineno">29 </span>                     <span class="s2">&quot;label&quot;</span><span class="o">:-</span><span class="mi">1</span><span class="p">}</span>
-<span class="lineno">30 </span>                 <span class="p">]</span>
-<span class="lineno">31 </span> <span class="p">}</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="linenos"> 2</span><span class="w">     </span><span class="s2">&quot;schema&quot;</span><span class="o">:</span><span class="w"></span>
+<span class="linenos"> 3</span><span class="w">     </span><span class="p">{</span><span class="w"></span>
+<span class="linenos"> 4</span><span class="w">         </span><span class="s2">&quot;fields&quot;</span><span class="o">:</span><span class="w"></span>
+<span class="linenos"> 5</span><span class="w">             </span><span class="p">[</span><span class="w"></span>
+<span class="linenos"> 6</span><span class="w">                 </span><span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="o">:</span><span class="s2">&quot;index&quot;</span><span class="p">,</span><span class="s2">&quot;type&quot;</span><span class="o">:</span><span class="s2">&quot;integer&quot;</span><span class="p">},</span><span class="w"></span>
+<span class="linenos"> 7</span><span class="w">                 </span><span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="o">:</span><span class="s2">&quot;videoId&quot;</span><span class="p">,</span><span class="s2">&quot;type&quot;</span><span class="o">:</span><span class="s2">&quot;any&quot;</span><span class="p">,</span><span class="s2">&quot;extDtype&quot;</span><span class="o">:</span><span class="s2">&quot;string&quot;</span><span class="p">},</span><span class="w"></span>
+<span class="linenos"> 8</span><span class="w">                 </span><span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="o">:</span><span class="s2">&quot;title&quot;</span><span class="p">,</span><span class="s2">&quot;type&quot;</span><span class="o">:</span><span class="s2">&quot;string&quot;</span><span class="p">},</span><span class="w"></span>
+<span class="linenos"> 9</span><span class="w">                 </span><span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="o">:</span><span class="s2">&quot;x&quot;</span><span class="p">,</span><span class="s2">&quot;type&quot;</span><span class="o">:</span><span class="s2">&quot;number&quot;</span><span class="p">},</span><span class="w"></span>
+<span class="linenos">10</span><span class="w">                 </span><span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="o">:</span><span class="s2">&quot;y&quot;</span><span class="p">,</span><span class="s2">&quot;type&quot;</span><span class="o">:</span><span class="s2">&quot;number&quot;</span><span class="p">},</span><span class="w"></span>
+<span class="linenos">11</span><span class="w">                 </span><span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="o">:</span><span class="s2">&quot;label&quot;</span><span class="p">,</span><span class="s2">&quot;type&quot;</span><span class="o">:</span><span class="s2">&quot;integer&quot;</span><span class="p">}</span><span class="w"></span>
+<span class="linenos">12</span><span class="w">             </span><span class="p">],</span><span class="w"></span>
+<span class="linenos">13</span><span class="w">         </span><span class="s2">&quot;primaryKey&quot;</span><span class="o">:</span><span class="p">[</span><span class="s2">&quot;index&quot;</span><span class="p">],</span><span class="w"></span>
+<span class="linenos">14</span><span class="w">         </span><span class="s2">&quot;pandas_version&quot;</span><span class="o">:</span><span class="s2">&quot;x.y.z&quot;</span><span class="p">},</span><span class="w"></span>
+<span class="linenos">15</span><span class="w">         </span><span class="s2">&quot;data&quot;</span><span class="o">:</span><span class="p">[</span><span class="w"></span>
+<span class="linenos">16</span><span class="w">                 </span><span class="p">{</span><span class="w"></span>
+<span class="linenos">17</span><span class="w">                     </span><span class="s2">&quot;index&quot;</span><span class="o">:</span><span class="mf">0</span><span class="p">,</span><span class="s2">&quot;videoId&quot;</span><span class="o">:</span><span class="s2">&quot;751352883781304320&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="linenos">18</span><span class="w">                     </span><span class="s2">&quot;title&quot;</span><span class="o">:</span><span class="s2">&quot;test dnd&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="linenos">19</span><span class="w">                     </span><span class="s2">&quot;x&quot;</span><span class="o">:-</span><span class="mf">5.9736323357</span><span class="p">,</span><span class="w"></span>
+<span class="linenos">20</span><span class="w">                     </span><span class="s2">&quot;y&quot;</span><span class="o">:-</span><span class="mf">4.7278847694</span><span class="p">,</span><span class="w"></span>
+<span class="linenos">21</span><span class="w">                     </span><span class="s2">&quot;label&quot;</span><span class="o">:-</span><span class="mf">1</span><span class="w"></span>
+<span class="linenos">22</span><span class="w">                 </span><span class="p">},</span><span class="w"></span>
+<span class="linenos">23</span><span class="w">                 </span><span class="p">{</span><span class="w"></span>
+<span class="linenos">24</span><span class="w">                     </span><span class="s2">&quot;index&quot;</span><span class="o">:</span><span class="mf">1</span><span class="p">,</span><span class="w"></span>
+<span class="linenos">25</span><span class="w">                     </span><span class="s2">&quot;videoId&quot;</span><span class="o">:</span><span class="s2">&quot;751345947757248512&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="linenos">26</span><span class="w">                     </span><span class="s2">&quot;title&quot;</span><span class="o">:</span><span class="s2">&quot;test upload&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="linenos">27</span><span class="w">                     </span><span class="s2">&quot;x&quot;</span><span class="o">:-</span><span class="mf">5.4844770432</span><span class="p">,</span><span class="w"></span>
+<span class="linenos">28</span><span class="w">                     </span><span class="s2">&quot;y&quot;</span><span class="o">:-</span><span class="mf">4.1368937492</span><span class="p">,</span><span class="w"></span>
+<span class="linenos">29</span><span class="w">                     </span><span class="s2">&quot;label&quot;</span><span class="o">:-</span><span class="mf">1</span><span class="p">}</span><span class="w"></span>
+<span class="linenos">30</span><span class="w">                 </span><span class="p">]</span><span class="w"></span>
+<span class="linenos">31</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>With the “videoId”, “x”, “y” and “label”, you can easily plotting
@@ -325,11 +326,11 @@ a chart of your own style to visualizing the clustering result.</p>
       &copy;2022, Yen C. Li.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.1.1</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.2.0.post0</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |
-      <a href="sources/cookbook.rst.txt"
+      <a href="_sources/cookbook.rst.txt"
           rel="nofollow">Page source</a>
     </div>
 
